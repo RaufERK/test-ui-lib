@@ -1,4 +1,4 @@
-import { Layout } from '@tot/ui-kit'
+import { Layout, useTheme } from '@tot/ui-kit'
 import {
   AlertProcess,
   Button,
@@ -21,6 +21,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react'
 const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:4000'
 
 const App = () => {
+  const currentTheme = useTheme()
   const [name, setName] = useState('Анна Смирнова')
   const [email, setEmail] = useState('')
   const [formMessage, setFormMessage] = useState<string | null>(null)
@@ -66,6 +67,25 @@ const App = () => {
           <Text size={ETextSize.B3} type={EFontType.SECONDARY}>
             Переключай тему в левом меню и смотри, как меняются фон и текст.
           </Text>
+          <div
+            style={{
+              marginTop: 16,
+              padding: 16,
+              backgroundColor:
+                currentTheme === 'light'
+                  ? 'rgba(0,0,0,0.05)'
+                  : 'rgba(255,255,255,0.1)',
+              borderRadius: 8,
+              border: `2px solid ${
+                currentTheme === 'light' ? '#e0e0e0' : '#555'
+              }`,
+            }}
+          >
+            <Text size={ETextSize.B2} style={{ fontWeight: 'bold' }}>
+              🎨 Текущая тема:{' '}
+              {currentTheme === 'light' ? 'Светлая ☀️' : 'Тёмная 🌙'}
+            </Text>
+          </div>
         </header>
 
         {/* Блок типографики */}

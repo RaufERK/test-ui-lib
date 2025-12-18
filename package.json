@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update": "npm --prefix ../tot-ui-kit run build && npm install --force @tot/ui-kit@file:../tot-ui-kit"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -25,8 +26,8 @@
     "vite": "^7.2.4"
   },
   "dependencies": {
+    "@sberbusiness/triplex-next": "^1.6.1",
     "@tot/ui-kit": "file:../tot-ui-kit",
-    "@sberbusiness/triplex-next": "^1.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }

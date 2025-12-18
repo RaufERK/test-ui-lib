@@ -26,6 +26,7 @@
     "vite": "^7.2.4"
   },
   "dependencies": {
+    "@sberbusiness/icons-next": "^1.8.0",
     "@sberbusiness/triplex-next": "^1.7.0",
     "@tot/ui-kit": "file:../tot-ui-kit",
     "react": "^18.3.1",

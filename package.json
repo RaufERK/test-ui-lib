@@ -26,7 +26,7 @@
     "vite": "^7.2.4"
   },
   "dependencies": {
-    "@sberbusiness/triplex-next": "^1.6.1",
+    "@sberbusiness/triplex-next": "^1.7.0",
     "@tot/ui-kit": "file:../tot-ui-kit",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

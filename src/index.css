@@ -36,11 +36,11 @@ button {
   border: 1px solid
     color-mix(
       in srgb,
-      var(--triplex-next-Typography-Primary_Color-1-4-0, rgba(31, 31, 34, 1))
+      var(--triplex-next-Typography-Primary_Color-1-9-0, rgba(31, 31, 34, 1))
         12%,
       transparent
     );
-  background-color: var(--triplex-next-ColorNeutral-100-1-4-0, #ffffff);
+  background-color: var(--triplex-next-ColorNeutral-100-1-9-0, #ffffff);
   backdrop-filter: blur(4px);
 }
 

@@ -52,13 +52,29 @@ button {
 
 .demo-page {
   padding: 32px;
-  max-width: 960px;
+  width: 100%;
+}
+
+.demo-header {
+  margin-bottom: 24px;
+}
+
+.demo-title {
+  color: var(--Text-Midnight-01, #000);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'SB Sans Display', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  margin: 0;
 }
 
 .demo-island {
   padding: 24px;
   border-radius: 8px;
   background: #ffffff;
+  width: 100%;
 }
 
 html[data-theme='dark'] .demo-island {

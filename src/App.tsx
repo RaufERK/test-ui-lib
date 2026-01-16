@@ -43,8 +43,7 @@ const App = () => {
   }
 
   const pageBackgroundColor = currentTheme === 'dark' ? '#000000' : '#EAEDF1'
-  const contentBackgroundColor =
-    currentTheme === 'dark' ? '#2D373F' : '#EAEDF1'
+  const contentBackgroundColor = currentTheme === 'dark' ? '#2D373F' : '#EAEDF1'
 
   return (
     <Layout
@@ -59,14 +58,20 @@ const App = () => {
       contentBackgroundColor={contentBackgroundColor}
     >
       <div className='demo-page'>
+        <header className='demo-header'>
+          <Title size={ETitleSize.H2} tag='h1' className='demo-title'>
+            Мониторинг системы
+          </Title>
+        </header>
         <div className='demo-island'>
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
             tempore ut officia facilis ratione at sequi deleniti. Doloribus
             voluptatum ab excepturi, neque consequatur iste sapiente vitae
             recusandae, possimus reprehenderit nemo. Eligendi quae modi fugiat
-            perferendis totam similique possimus quasi? Inventore animi natus non
-            ducimus reprehenderit odit consectetur consequuntur recusandae facere?
+            perferendis totam similique possimus quasi? Inventore animi natus
+            non ducimus reprehenderit odit consectetur consequuntur recusandae
+            facere?
           </div>
           <header style={{ marginBottom: 24 }}>
             <Title size={ETitleSize.H2} tag='h1'>
@@ -96,150 +101,150 @@ const App = () => {
             </div>
           </header>
 
-        {/* Блок типографики */}
-        <section className='app-section'>
-          <Title size={ETitleSize.H3} tag='h2'>
-            Типографика
-          </Title>
-          <div className='stack'>
-            <Text size={ETextSize.B1}>
-              Основной текст B1 — ключевые сообщения интерфейса.
-            </Text>
-            <Text size={ETextSize.B2} type={EFontType.SECONDARY}>
-              B2 — дополнительная информация.
-            </Text>
-            <Caption size={ECaptionSize.C1} type={EFontType.TERTIARY}>
-              Caption C1 — служебные подписи и комментарии.
-            </Caption>
-          </div>
-        </section>
+          {/* Блок типографики */}
+          <section className='app-section'>
+            <Title size={ETitleSize.H3} tag='h2'>
+              Типографика
+            </Title>
+            <div className='stack'>
+              <Text size={ETextSize.B1}>
+                Основной текст B1 — ключевые сообщения интерфейса.
+              </Text>
+              <Text size={ETextSize.B2} type={EFontType.SECONDARY}>
+                B2 — дополнительная информация.
+              </Text>
+              <Caption size={ECaptionSize.C1} type={EFontType.TERTIARY}>
+                Caption C1 — служебные подписи и комментарии.
+              </Caption>
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <Title size={ETitleSize.H3} tag='h2'>
-            Типографика
-          </Title>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <Text size={ETextSize.B1}>
-              Основной текст B1 — ключевые сообщения интерфейса.
-            </Text>
-            <Text size={ETextSize.B2} type={EFontType.SECONDARY}>
-              B2 — дополнительная информация.
-            </Text>
-            <Caption size={ECaptionSize.C1} type={EFontType.TERTIARY}>
-              Caption C1 — служебные подписи и комментарии.
-            </Caption>
-          </div>
-        </section>
+          <section style={{ marginBottom: 32 }}>
+            <Title size={ETitleSize.H3} tag='h2'>
+              Типографика
+            </Title>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <Text size={ETextSize.B1}>
+                Основной текст B1 — ключевые сообщения интерфейса.
+              </Text>
+              <Text size={ETextSize.B2} type={EFontType.SECONDARY}>
+                B2 — дополнительная информация.
+              </Text>
+              <Caption size={ECaptionSize.C1} type={EFontType.TERTIARY}>
+                Caption C1 — служебные подписи и комментарии.
+              </Caption>
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <Title size={ETitleSize.H3} tag='h2'>
-            Форма профиля
-          </Title>
-          <form
-            onSubmit={handleSubmit}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 16,
-              marginTop: 8,
-            }}
-          >
-            <TextField
-              label='Имя'
-              inputProps={{
-                value: name,
-                placeholder: 'Введите имя',
-                onChange: handleNameChange,
+          <section style={{ marginBottom: 32 }}>
+            <Title size={ETitleSize.H3} tag='h2'>
+              Форма профиля
+            </Title>
+            <form
+              onSubmit={handleSubmit}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+                marginTop: 8,
               }}
-            />
-            <TextField
-              label='E-mail'
-              inputProps={{
-                value: email,
-                placeholder: 'Введите e-mail',
-                type: 'email',
-                onChange: handleEmailChange,
-              }}
-            />
+            >
+              <TextField
+                label='Имя'
+                inputProps={{
+                  value: name,
+                  placeholder: 'Введите имя',
+                  onChange: handleNameChange,
+                }}
+              />
+              <TextField
+                label='E-mail'
+                inputProps={{
+                  value: email,
+                  placeholder: 'Введите e-mail',
+                  type: 'email',
+                  onChange: handleEmailChange,
+                }}
+              />
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 12,
+                  flexWrap: 'wrap',
+                }}
+              >
+                <Button
+                  theme={EButtonTheme.GENERAL}
+                  type='submit'
+                  size={EComponentSize.MD}
+                >
+                  Сохранить
+                </Button>
+                {formMessage && (
+                  <Caption size={ECaptionSize.C1} type={EFontType.SUCCESS}>
+                    {formMessage}
+                  </Caption>
+                )}
+              </div>
+            </form>
+          </section>
+
+          <section style={{ marginBottom: 32 }}>
+            <Title size={ETitleSize.H3} tag='h2'>
+              Системное уведомление
+            </Title>
+            <div style={{ marginTop: 8 }}>
+              {alertVisible ? (
+                <AlertProcess
+                  type={EAlertType.INFO}
+                  closable
+                  onClose={() => setAlertVisible(false)}
+                >
+                  <Text size={ETextSize.B3}>Демо-уведомление Triplex.</Text>
+                  <Caption size={ECaptionSize.C1} type={EFontType.SECONDARY}>
+                    Переключи тему через левое меню и посмотри, как меняются
+                    фон, текст и компоненты.
+                  </Caption>
+                </AlertProcess>
+              ) : (
+                <Button
+                  theme={EButtonTheme.SECONDARY}
+                  size={EComponentSize.SM}
+                  onClick={() => setAlertVisible(true)}
+                >
+                  Показать уведомление
+                </Button>
+              )}
+            </div>
+          </section>
+
+          <section style={{ marginBottom: 32 }}>
+            <Title size={ETitleSize.H3} tag='h2'>
+              Кнопки
+            </Title>
             <div
               style={{
                 display: 'flex',
-                alignItems: 'center',
-                gap: 12,
                 flexWrap: 'wrap',
+                gap: 12,
+                marginTop: 8,
               }}
             >
-              <Button
-                theme={EButtonTheme.GENERAL}
-                type='submit'
-                size={EComponentSize.MD}
-              >
-                Сохранить
+              <Button theme={EButtonTheme.GENERAL} size={EComponentSize.MD}>
+                Основное действие
               </Button>
-              {formMessage && (
-                <Caption size={ECaptionSize.C1} type={EFontType.SUCCESS}>
-                  {formMessage}
-                </Caption>
-              )}
+              <Button theme={EButtonTheme.DANGER} size={EComponentSize.MD}>
+                Опасное действие
+              </Button>
+              <Button theme={EButtonTheme.SECONDARY} size={EComponentSize.MD}>
+                Вторичная кнопка
+              </Button>
+              <Button theme={EButtonTheme.LINK} size={EComponentSize.MD}>
+                Ссылка
+              </Button>
             </div>
-          </form>
-        </section>
-
-        <section style={{ marginBottom: 32 }}>
-          <Title size={ETitleSize.H3} tag='h2'>
-            Системное уведомление
-          </Title>
-          <div style={{ marginTop: 8 }}>
-            {alertVisible ? (
-              <AlertProcess
-                type={EAlertType.INFO}
-                closable
-                onClose={() => setAlertVisible(false)}
-              >
-                <Text size={ETextSize.B3}>Демо-уведомление Triplex.</Text>
-                <Caption size={ECaptionSize.C1} type={EFontType.SECONDARY}>
-                  Переключи тему через левое меню и посмотри, как меняются фон,
-                  текст и компоненты.
-                </Caption>
-              </AlertProcess>
-            ) : (
-              <Button
-                theme={EButtonTheme.SECONDARY}
-                size={EComponentSize.SM}
-                onClick={() => setAlertVisible(true)}
-              >
-                Показать уведомление
-              </Button>
-            )}
-          </div>
-        </section>
-
-        <section style={{ marginBottom: 32 }}>
-          <Title size={ETitleSize.H3} tag='h2'>
-            Кнопки
-          </Title>
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: 12,
-              marginTop: 8,
-            }}
-          >
-            <Button theme={EButtonTheme.GENERAL} size={EComponentSize.MD}>
-              Основное действие
-            </Button>
-            <Button theme={EButtonTheme.DANGER} size={EComponentSize.MD}>
-              Опасное действие
-            </Button>
-            <Button theme={EButtonTheme.SECONDARY} size={EComponentSize.MD}>
-              Вторичная кнопка
-            </Button>
-            <Button theme={EButtonTheme.LINK} size={EComponentSize.MD}>
-              Ссылка
-            </Button>
-          </div>
-        </section>
+          </section>
 
           <section>
             <Title size={ETitleSize.H3} tag='h2'>
@@ -259,8 +264,8 @@ const App = () => {
                     Бизнес‑карта «Всё включено»
                   </Title>
                   <Text size={ETextSize.B3} type={EFontType.SECONDARY}>
-                    До 5% кешбэка на ключевые категории, бесплатное обслуживание и
-                    быстрые платежи в один клик.
+                    До 5% кешбэка на ключевые категории, бесплатное обслуживание
+                    и быстрые платежи в один клик.
                   </Text>
                   <Button
                     theme={EButtonTheme.SECONDARY_LIGHT}

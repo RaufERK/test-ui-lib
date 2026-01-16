@@ -42,6 +42,10 @@ const App = () => {
     setEmail(event.target.value)
   }
 
+  const pageBackgroundColor = currentTheme === 'dark' ? '#000000' : '#EAEDF1'
+  const contentBackgroundColor =
+    currentTheme === 'dark' ? '#2D373F' : '#EAEDF1'
+
   return (
     <Layout
       menuProps={{
@@ -50,43 +54,47 @@ const App = () => {
         activeAppId: 'test-1',
         systemTitle: 'Test Shell',
       }}
+      menuBackgroundColor='transparent'
+      pageBackgroundColor={pageBackgroundColor}
+      contentBackgroundColor={contentBackgroundColor}
     >
-      <div style={{ padding: 32, maxWidth: 960 }}>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-          tempore ut officia facilis ratione at sequi deleniti. Doloribus
-          voluptatum ab excepturi, neque consequatur iste sapiente vitae
-          recusandae, possimus reprehenderit nemo. Eligendi quae modi fugiat
-          perferendis totam similique possimus quasi? Inventore animi natus non
-          ducimus reprehenderit odit consectetur consequuntur recusandae facere?
-        </div>
-        <header style={{ marginBottom: 24 }}>
-          <Title size={ETitleSize.H2} tag='h1'>
-            Демонстрация темы @tot/ui-kit + Triplex
-          </Title>
-          <Text size={ETextSize.B3} type={EFontType.SECONDARY}>
-            Переключай тему в левом меню и смотри, как меняются фон и текст.
-          </Text>
-          <div
-            style={{
-              marginTop: 16,
-              padding: 16,
-              backgroundColor:
-                currentTheme === 'light'
-                  ? 'rgba(0,0,0,0.05)'
-                  : 'rgba(255,255,255,0.1)',
-              borderRadius: 8,
-              border: `2px solid ${
-                currentTheme === 'light' ? '#e0e0e0' : '#555'
-              }`,
-            }}
-          >
-            <Text size={ETextSize.B2} style={{ fontWeight: 'bold' }}>
-              🎨 Текущая тема:{' '}
-              {currentTheme === 'light' ? 'Светлая ☀️' : 'Тёмная 🌙'}
-            </Text>
+      <div className='demo-page'>
+        <div className='demo-island'>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            tempore ut officia facilis ratione at sequi deleniti. Doloribus
+            voluptatum ab excepturi, neque consequatur iste sapiente vitae
+            recusandae, possimus reprehenderit nemo. Eligendi quae modi fugiat
+            perferendis totam similique possimus quasi? Inventore animi natus non
+            ducimus reprehenderit odit consectetur consequuntur recusandae facere?
           </div>
-        </header>
+          <header style={{ marginBottom: 24 }}>
+            <Title size={ETitleSize.H2} tag='h1'>
+              Демонстрация темы @tot/ui-kit + Triplex
+            </Title>
+            <Text size={ETextSize.B3} type={EFontType.SECONDARY}>
+              Переключай тему в левом меню и смотри, как меняются фон и текст.
+            </Text>
+            <div
+              style={{
+                marginTop: 16,
+                padding: 16,
+                backgroundColor:
+                  currentTheme === 'light'
+                    ? 'rgba(0,0,0,0.05)'
+                    : 'rgba(255,255,255,0.1)',
+                borderRadius: 8,
+                border: `2px solid ${
+                  currentTheme === 'light' ? '#e0e0e0' : '#555'
+                }`,
+              }}
+            >
+              <Text size={ETextSize.B2} style={{ fontWeight: 'bold' }}>
+                🎨 Текущая тема:{' '}
+                {currentTheme === 'light' ? 'Светлая ☀️' : 'Тёмная 🌙'}
+              </Text>
+            </div>
+          </header>
 
         {/* Блок типографики */}
         <section className='app-section'>
@@ -233,37 +241,38 @@ const App = () => {
           </div>
         </section>
 
-        <section>
-          <Title size={ETitleSize.H3} tag='h2'>
-            Карточка предложения
-          </Title>
-          <div style={{ marginTop: 8 }}>
-            <CardStatic theme={ECardTheme.GENERAL}>
-              <CardStatic.Content
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 8,
-                  padding: 16,
-                }}
-              >
-                <Title size={ETitleSize.H3} tag='h3'>
-                  Бизнес‑карта «Всё включено»
-                </Title>
-                <Text size={ETextSize.B3} type={EFontType.SECONDARY}>
-                  До 5% кешбэка на ключевые категории, бесплатное обслуживание и
-                  быстрые платежи в один клик.
-                </Text>
-                <Button
-                  theme={EButtonTheme.SECONDARY_LIGHT}
-                  size={EComponentSize.SM}
+          <section>
+            <Title size={ETitleSize.H3} tag='h2'>
+              Карточка предложения
+            </Title>
+            <div style={{ marginTop: 8 }}>
+              <CardStatic theme={ECardTheme.GENERAL}>
+                <CardStatic.Content
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 8,
+                    padding: 16,
+                  }}
                 >
-                  Подробнее
-                </Button>
-              </CardStatic.Content>
-            </CardStatic>
-          </div>
-        </section>
+                  <Title size={ETitleSize.H3} tag='h3'>
+                    Бизнес‑карта «Всё включено»
+                  </Title>
+                  <Text size={ETextSize.B3} type={EFontType.SECONDARY}>
+                    До 5% кешбэка на ключевые категории, бесплатное обслуживание и
+                    быстрые платежи в один клик.
+                  </Text>
+                  <Button
+                    theme={EButtonTheme.SECONDARY_LIGHT}
+                    size={EComponentSize.SM}
+                  >
+                    Подробнее
+                  </Button>
+                </CardStatic.Content>
+              </CardStatic>
+            </div>
+          </section>
+        </div>
       </div>
     </Layout>
   )

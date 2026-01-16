@@ -49,3 +49,19 @@ button {
   flex-direction: column;
   gap: 8px;
 }
+
+.demo-page {
+  padding: 32px;
+  max-width: 960px;
+}
+
+.demo-island {
+  padding: 24px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+html[data-theme='dark'] .demo-island {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+}
